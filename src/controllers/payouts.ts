@@ -77,7 +77,7 @@ export class PayoutController {
         return payout;
     }
 
-    @Get(`/payoutMethods`)
+    @Get("/payoutMethods")
     @OpenAPI({ summary: 'Return a list of payout methods' })
     @ResponseSchema(PayoutMethod)
     async getPayoutMethods(@QueryParam('payout_currency') payout_currency: string) {
