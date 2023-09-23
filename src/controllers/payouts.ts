@@ -62,7 +62,7 @@ export class PayoutController {
     @UseBefore(dynamicValidationMiddleware)
     @ResponseSchema(Payout)
     @OpenAPI({ summary: 'Create a new payout' })
-    async createPayout(@Body() body: any) {
+    async createPayout(@Body() body: Payout) {
         const rapydService = new RapydService();
         const payout = await rapydService.createPayout(body);
 

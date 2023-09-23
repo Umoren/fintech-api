@@ -9,7 +9,7 @@ export enum EventType {
 
 export class WebhookEvent {
 
-    constructor(id: string, eventType: EventType, data: any) {
+    constructor(id: string, eventType: EventType, data: Record<string, unknown>) {
         this.id = id;
         this.eventType = eventType;
         this.data = data;
@@ -22,7 +22,7 @@ export class WebhookEvent {
     eventType: EventType;
 
     @IsObject()
-    data: any; // Define the specific payload structure based on the Rapyd Disburse API
+    data: Record<string, unknown>; // Define the specific payload structure based on the Rapyd Disburse API
 
     @IsString()
     timestamp: Date;

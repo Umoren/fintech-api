@@ -24,15 +24,15 @@ export class WebhookEventController {
         @HeaderParam('signature') signature: string,
         @HeaderParam('timestamp') timestamp: number,
         @HeaderParam('salt') salt: string,
-        @Body() body: any,
+        @Body() body: Record<string, any>
     ) {
         const rapydService = new RapydService();
         const url = `https://${request.hostname}${request.path}`;
         console.log('url', url)
-        if (!rapydService.authWebhookRequest(signature, url, salt, timestamp, body)) {
+        if (!rapydService.authWebhookRequest(signature, url, salt, timestamp, JSON.stringify(body))) {
             throw new HttpException(401, 'Signature not valid');
         }
-        const eventId = body.id;
+        const eventId: string = body.id;
         const eventType = body.type;
         const data = body.data;
 

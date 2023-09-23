@@ -69,7 +69,7 @@ class App {
     }
 
     private initializeSwagger(controllers: Function[]) {
-        const schemas: any = validationMetadatasToSchemas({
+        const schemas = validationMetadatasToSchemas({
             classTransformerMetadataStorage: defaultMetadataStorage,
             refPointerPrefix: '#/components/schemas/',
         });
