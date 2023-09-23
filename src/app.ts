@@ -11,7 +11,7 @@ import { routingControllersToSpec } from 'routing-controllers-openapi';
 import swaggerUi from 'swagger-ui-express';
 import errorMiddleware from '@/middlewares/error.middleware';
 import { logger, stream } from '@utils/logger';
-const { defaultMetadataStorage } = require('class-transformer/cjs/storage');
+import { defaultMetadataStorage } from 'class-transformer/cjs/storage';
 
 class App {
     public app: express.Application;
