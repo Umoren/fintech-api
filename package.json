@@ -11,7 +11,7 @@
     "lint": "eslint 'src/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts'",
     "test": "mocha --require ts-node/register 'src/tests/**/*.test.ts' --exit",
-    "coverage": "nyc npm test"
+    "coverage": "nyc --reporter=cobertura npm test"
   },
   "keywords": [],
   "author": "",
