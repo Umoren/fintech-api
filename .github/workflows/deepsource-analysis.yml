@@ -33,10 +33,3 @@ jobs:
         # Send the report to DeepSource
         ./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
 
-    # OR Report test-coverage to DeepSource using GitHub Action
-    - name: Report test coverage to DeepSource
-      uses: deepsourcelabs/test-coverage-action@master
-      with:
-        key: python  # Replace with your programming language
-        coverage-file: coverage.xml  # Replace with your coverage file
-        dsn: ${{ secrets.DEEPSOURCE_DSN }}
