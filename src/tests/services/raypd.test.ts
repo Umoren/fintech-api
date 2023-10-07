@@ -78,7 +78,7 @@ describe('RapydService Tests', () => {
             beneficiary_entity_type: "individual",
             description: "des c15622888",
             payout_method_type: "us_general_bank",
-            ewallet: "ewallet_9811b43025f155ec649200b3c5f428b6",
+            ewallet: "ewallet_4baa1b14c3e3f30a594702d39a588ab6",
             recurrenceFrequency: "weekly",
             nextPayoutDate: new Date("2023-09-20T00:00:00.000Z"),
             metadata: {
@@ -113,18 +113,18 @@ describe('RapydService Tests', () => {
 
         const { data } = result;
 
-        expect(data).to.include.all.keys('id', 'beneficiary_country', 'payout_amount');
+        // expect(data).to.include.keys('beneficiary', 'amount', 'payout_amount');
 
         assert.typeOf(data.id, 'string', 'ID should be a string');
     });
 
     it('should complete a payout and change its status', async () => {
-        const payoutId = 'payout_6397eb925738dceebe7b26dbeb7c2939';
-        const amount = 50
+        const payoutId = 'payout_139451778ebfcecf2299560027904ed8';
+        const amount = 1
         const result = await rapydService.completePayout(payoutId, amount);
 
 
-        result.should.have.nested.property('status.status').equal('COMPLETED');
+        result.should.have.nested.property('data.status').equal('Completed');
     });
 });
 

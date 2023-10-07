@@ -34,13 +34,13 @@ describe('Payout Tests', () => {
             beneficiary_entity_type: "individual",
             description: "des c15622888",
             payout_method_type: "us_general_bank",
-            ewallet: "ewallet_9811b43025f155ec649200b3c5f428b6",
+            ewallet: "ewallet_4baa1b14c3e3f30a594702d39a588ab6",
             recurrenceFrequency: "weekly",
             nextPayoutDate: "2023-09-20T00:00:00.000Z",
             metadata: {
                 merchant_defined: true
             },
-            payout_amount: 50,
+            payout_amount: 1,
             payout_currency: "USD",
             sender: {
                 first_name: "Sam",
