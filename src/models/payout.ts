@@ -47,7 +47,7 @@ export class Payout {
     @IsOptional()
     recurrenceFrequency: string;  // 'weekly', 'monthly', etc.
 
-    @IsDate()
+    @IsString()
     @IsOptional()
     @Type(() => Date)
     nextPayoutDate: Date;  // The date for the next scheduled payout

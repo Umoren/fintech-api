@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import config from '@/config/config';
+import config from './config/config';
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
@@ -9,8 +9,8 @@ import morgan from 'morgan';
 import { useExpressServer, getMetadataArgsStorage } from 'routing-controllers';
 import { routingControllersToSpec } from 'routing-controllers-openapi';
 import swaggerUi from 'swagger-ui-express';
-import errorMiddleware from '@/middlewares/error.middleware';
-import { logger, stream } from '@utils/logger';
+import errorMiddleware from './middlewares/error.middleware';
+import { logger, stream } from './utils/logger';
 import { defaultMetadataStorage } from 'class-transformer/cjs/storage';
 
 class App {

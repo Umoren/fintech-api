@@ -1,15 +1,15 @@
 import crypto from 'crypto';
 import axios, { AxiosInstance } from 'axios';
-import { Beneficiary } from '@/models/beneficiary';
+import { Beneficiary } from '../models/beneficiary';
 import { Payout } from '../models/payout';
-import { PayoutMethod } from '@/models/payoutMethod';
+import { PayoutMethod } from '../models/payoutMethod';
 import HttpMethod from 'http-method-enum';
 import config from '../config/config';
 import { logger } from '../utils/logger';
 import { HttpException } from '../exceptions/HttpException';
-import { RapydResponse } from '@/models/baseRapydResponse';
-import { PayoutMethodRequiredFieldsQuery } from '@/models/payoutMethodRequiredFields';
-import { CompletePayout } from '@/models/completePayout';
+import { RapydResponse } from '../models/baseRapydResponse';
+import { PayoutMethodRequiredFieldsQuery } from '../models/payoutMethodRequiredFields';
+import { CompletePayout } from '../models/completePayout';
 
 class RapydService {
     private _accessKey: string;
@@ -77,6 +77,7 @@ class RapydService {
             return response.data
         } catch (error) {
             if (error.isAxiosError) {
+                // console.log("error", error)
                 throw new HttpException(+error.response.status, error.response.data?.status || error.response.data);
             }
         }
@@ -105,7 +106,7 @@ class RapydService {
             const response = await this._axiosClient.get(url);
             return response.data;
         } catch (error) {
-            console.error('this is an error', error);
+            // console.error('this is an error', error);
             throw new HttpException(error.response?.status, error.response?.data || 'An error occurred');
         }
     }

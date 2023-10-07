@@ -1,8 +1,8 @@
 import { Param, Body, Get, Post, HttpCode, UseBefore, JsonController } from 'routing-controllers';
 import { OpenAPI, ResponseSchema } from 'routing-controllers-openapi';
-import { validationMiddleware } from '@/middlewares/validation.middleware';
-import RapydService from '@/services/rapydService';
-import { Beneficiary } from '@/models/beneficiary';
+import { validationMiddleware } from '../middlewares/validation.middleware';
+import RapydService from '../services/rapydService';
+import { Beneficiary } from '../models/beneficiary';
 
 @JsonController('/api')
 export class BeneficiaryController {

@@ -54,8 +54,8 @@ export const dynamicValidationMiddleware = async (req: Request, res: Response, n
 
         next();
     } catch (error) {
-        console.error('Validation Error:', error);
-        console.error('Request Body:', req.body);
+        // console.error('Validation Error:', error);
+        // console.error('Request Body:', req.body);
         next(error);
     }
 };

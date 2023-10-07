@@ -1,12 +1,12 @@
 import { Param, Body, Get, Post, HttpCode, UseBefore, JsonController, Delete, QueryParam, QueryParams } from 'routing-controllers';
 import { OpenAPI, ResponseSchema } from 'routing-controllers-openapi';
-import { validationMiddleware } from '@/middlewares/validation.middleware';
-import { dynamicValidationMiddleware } from '@/middlewares/dynamicValidation.middleware';
-import RapydService from '@/services/rapydService';
-import { Payout } from '@/models/payout';
-import { PayoutMethod } from '@/models/payoutMethod';
-import { PayoutMethodRequiredFieldsQuery } from '@/models/payoutMethodRequiredFields';
-import { CompletePayout } from '@/models/completePayout';
+import { validationMiddleware } from '../middlewares/validation.middleware';
+import { dynamicValidationMiddleware } from '../middlewares/dynamicValidation.middleware';
+import RapydService from '../services/rapydService';
+import { Payout } from '../models/payout';
+import { PayoutMethod } from '../models/payoutMethod';
+import { PayoutMethodRequiredFieldsQuery } from '../models/payoutMethodRequiredFields';
+import { CompletePayout } from '../models/completePayout';
 import cron from 'node-cron';
 
 const inMemoryPayouts: Payout[] = [];
@@ -62,7 +62,7 @@ export class PayoutController {
     @UseBefore(dynamicValidationMiddleware)
     @ResponseSchema(Payout)
     @OpenAPI({ summary: 'Create a new payout' })
-    async createPayout(@Body() body: Payout) {
+    async createPayout(@Body() body: any) {
         const rapydService = new RapydService();
         const payout = await rapydService.createPayout(body);
 
@@ -77,7 +77,7 @@ export class PayoutController {
         return payout;
     }
 
-    @Get("/payoutMethods")
+    @Get(`/payoutMethods`)
     @OpenAPI({ summary: 'Return a list of payout methods' })
     @ResponseSchema(PayoutMethod)
     async getPayoutMethods(@QueryParam('payout_currency') payout_currency: string) {

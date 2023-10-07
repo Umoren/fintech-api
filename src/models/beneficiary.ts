@@ -52,42 +52,4 @@ export class Beneficiary {
 
     @IsString()
     bic_swift: string;
-
-    constructor(
-        category: string,
-        country: string,
-        currency: string,
-        entity_type: string,
-        first_name: string,
-        last_name: string,
-        identification_type: string,
-        identification_value: string,
-        merchant_reference_id: string,
-        payment_type: string,
-        address: string,
-        city: string,
-        state: string,
-        postcode: string,
-        account_number: string,
-        bank_name: string,
-        bic_swift: string
-    ) {
-        this.category = category;
-        this.country = country;
-        this.currency = currency;
-        this.entity_type = entity_type;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.identification_type = identification_type;
-        this.identification_value = identification_value;
-        this.merchant_reference_id = merchant_reference_id;
-        this.payment_type = payment_type;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.postcode = postcode;
-        this.account_number = account_number;
-        this.bank_name = bank_name;
-        this.bic_swift = bic_swift;
-    }
 }

@@ -1,4 +1,4 @@
-import { EventType, WebhookEvent } from "@/models/webhookEvent";
+import { EventType, WebhookEvent } from "../models/webhookEvent";
 
 class WebhookEventService {
     private static _instance: WebhookEventService;

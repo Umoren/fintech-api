@@ -1,10 +1,10 @@
 import { Post, Req, HeaderParam, Body, JsonController, Get } from 'routing-controllers';
 import { OpenAPI, ResponseSchema } from 'routing-controllers-openapi';
-import { WebhookEvent } from '@/models/webhookEvent';
-import RapydService from '@/services/rapydService';
+import { WebhookEvent } from '../models/webhookEvent';
+import RapydService from '../services/rapydService';
 import { Request } from 'express';
-import { HttpException } from '@/exceptions/HttpException';
-import webhookEventService from '@/services/webhookEventService';
+import { HttpException } from '../exceptions/HttpException';
+import webhookEventService from '../services/webhookEventService';
 @JsonController('/api')
 export class WebhookEventController {
 
