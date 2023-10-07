@@ -5,5 +5,5 @@ name = "javascript"
 
   [analyzers.meta]
   environment = ["nodejs"]
-name = "fintechApiCoverage"
-enabled = true
+  name = "test-coverage"
+  enabled = true
