@@ -119,7 +119,7 @@ describe('RapydService Tests', () => {
     });
 
     it('should complete a payout and change its status', async () => {
-        const payoutId = 'payout_7488f1b320bd27accc4a010a11515bc2';
+        const payoutId = 'payout_fb34fb25309c58344271cadaa2c39d51';
         const amount = 1
         const result = await rapydService.completePayout(payoutId, amount);
 
