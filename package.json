@@ -10,8 +10,7 @@
     "build:tsc": "tsc && tsc-alias",
     "lint": "eslint 'src/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts'",
-    "test": "mocha --require ts-node/register 'src/tests/**/*.test.ts' --exit",
-    "coverage": "nyc --reporter=cobertura npm test"
+    "test": "mocha --require ts-node/register 'src/tests/**/*.test.ts' --exit"
   },
   "keywords": [],
   "author": "",
