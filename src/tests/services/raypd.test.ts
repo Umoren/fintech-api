@@ -84,7 +84,7 @@ describe('RapydService Tests', () => {
             metadata: {
                 merchant_defined: true
             },
-            payout_amount: 50,
+            payout_amount: 1,
             payout_currency: "USD",
             sender: {
                 first_name: "Sam",
@@ -117,7 +117,7 @@ describe('RapydService Tests', () => {
     });
 
     it('should complete a payout and change its status', async () => {
-        const payoutId = 'payout_6efe4e1ac109d10f8c3a9cca375a1dc2';
+        const payoutId = 'payout_2ce862f9285b341e9abe0b285e7a8bf1';
         const amount = 1
         const result = await rapydService.completePayout(payoutId, amount);
 
