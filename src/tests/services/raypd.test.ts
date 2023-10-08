@@ -113,13 +113,11 @@ describe('RapydService Tests', () => {
 
         const { data } = result;
 
-        // expect(data).to.include.keys('beneficiary', 'amount', 'payout_amount');
-
         assert.typeOf(data.id, 'string', 'ID should be a string');
     });
 
     it('should complete a payout and change its status', async () => {
-        const payoutId = 'payout_fb34fb25309c58344271cadaa2c39d51';
+        const payoutId = 'payout_6848341a4cb9fc8e4293fa5c0dd8b597';
         const amount = 1
         const result = await rapydService.completePayout(payoutId, amount);
 
